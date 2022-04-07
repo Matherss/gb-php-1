@@ -17,7 +17,7 @@ $res = mysqli_query($connect,$sql);
 while($data = mysqli_fetch_assoc($res)):?>
 
     <img src="<?=$path?>/small/<?=$data['title']?>" id="<?=$data['id']?>" data-image="<?=$data['title']?>" class="image" title="Размер: <?=$data['size']?>, Просмотров: <?=$data['views']?>" onclick="incrementView(<?=$data['id']?>)"  style="cursor:pointer"/>
-    <div class="overlay" onclick="closeModal()"><div class="modal__active"><img src="<?=$data['src']?>" data-image="<?=$data['title']?>" class="image_max"  /></div> </div>
+    <div class="overlay" onclick="closeModal()"><div class="modal__active"><img src="<?=$data['src']?>" data-image="<?=$data['title']?>" class="image_max"  />Просмотров: <?=$data['views']?></div> </div>
 <?php endwhile;
 mysqli_close($connect);
 };
