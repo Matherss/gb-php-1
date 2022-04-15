@@ -1,3 +1,12 @@
+<?php
+session_start();
+$login = $_SESSION['login'];
+
+include('../engine/config.php');
+$sql = "SELECT * FROM `user` where `user_login`='$login'";
+$res = mysqli_fetch_assoc(mysqli_query($connect,$sql));
+
+if($res['is_admin'] == 1):?>
 
 <head>
     <style>
@@ -46,3 +55,7 @@ while($data = mysqli_fetch_assoc($res)):?>
 <?php endwhile;
 mysqli_close($connect);
 ?>
+
+<?php else:?>
+    <h1 style="color:red">Вы не Администратор</h1>
+    <?php endif?>

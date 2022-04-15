@@ -19,14 +19,18 @@ session_start();
   <body>
     <?php
 echo $_SESSION['login'];
-    
+
+?>
+
+    <?php
     if($_GET['success'] && $_SESSION['login']):?>
     <h1>Вы вошли под логином: <?=$_SESSION['login']?></h1>
     <?php
     endif;
     ?>
     <header>
-      <nav><a href="./admin.php">Админка</a><a href="./addgood.php">Добавление нового товара</a><a href="./login_tmpl.php">Зайти</a><a href="./cart.php">Корзина</a></nav>
+      <nav><a href="./admin.php">Админка</a><a href="./addgood.php">Добавление нового товара</a>
+    <?php if(!$_SESSION['login']) echo '<a href="./login_tmpl.php">Зайти</a>'?><?php if($_SESSION['login']) echo '<a href="../engine/logout.php">Выйти</a>'?><a href="./cart.php">Корзина</a></nav>
     </header>
     <div class="body__wrapper">
     <main>
