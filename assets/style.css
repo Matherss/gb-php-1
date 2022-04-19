@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-color: #a0d2eb;
+  --secondary-color: #e5eaf5;
+  --link-color: #8458b3;
+  --heading-color: #d0bdf4;
+  --option-color: #494d5f;
+}
+a {
+  color: var(--heading-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-color);
+}
+body {
+  background-color: var(--option-color);
+  color: var(--secondary-color);
+  text-align: center;
+}
+header {
+  background: var(--main-color);
+  height: 2em;
+}
+.body__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+nav {
+  background: var(--option-color);
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 0px 5px 5px;
+  padding: 0.2em;
+}
+@media screen and (max-width: 1366px) {
+  header {
+    height: fit-content;
+  }
+  nav {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.goods {
+  margin: 0 auto;
+  margin: 2px;
+  padding-top: 0.15em;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 0.5%;
+}
+.good {
+  color: var(--option-color);
+}
+.good__title {
+  background-color: var(--heading-color);
+}
+.good__content {
+  background-color: var(--secondary-color);
+  min-height: 250px;
+}
+
+.reviews {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.reviews__content {
+  padding: 15px;
+}
+.reviews__form {
+  padding: 15px;
+}
+.reviews__form form {
+  display: grid;
+}
+input[type="text"] {
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
+}
+input[type="text"]:focus {
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s;
+  border-bottom: 2px solid #c0c0fa;
+  color: #d0bdf4;
+}
+input[type="submit"] {
+  background: #d0bdf4;
+  margin-top: 5px;
+  outline: none;
+  resize: none;
+  border: 0;
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+input[type="submit"]:hover {
+  background: #c3a5fb;
+}
+label {
+  text-align: left;
+}
